@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}
+Quản lý nhân viên page
+{% endblock  %}
+{% block content %}
+{% include 'includes/options.html' %}
+
+<table class="table table-hover table-dark">
+   <thead>
+      <tr>
+         <!-- Your Columns HERE -->
+         <th scope="col">ID</th>
+         <th scope="col">Name</th>
+         <th scope="col">Numberphone</th>
+         <th scope="col">Datejoin</th>
+         <th scope="col">Options</th>
+      </tr>
+   </thead>
+   <tbody>
+      <!-- Your rows inside the table HERE: -->
+      {% for dsnv in dsnv%}
+      
+      <tr>
+         <td>{{ dsnv.id }}</td>
+         <td>{{ dsnv.name }}</td>
+         <td>{{ dsnv.numberphone }}</td>
+         <td>{{ dsnv.datejoin }}</td>
+         <td> 
+            <button class="btn btn -outline btn-info"data-toggle="modal"data-target="#exampleModal">Read Information</button> 
+            <a href="/edit/{{ dsnv.id }}"><button class="btn btn-outline btn-info">Edit</button></a>
+            <a href="/delete/{{ dsnv.id }}"><button type="button" class="btn btn-outline btn-danger">Delete</button></a>
+         </td>
+      </tr>
+      {% endfor %}
+   </tbody>
+</table>
+<a class="nav-link" href="{{ url_for('add') }}"><button type="button" class="btn btn-success">Create</button></a>
+
+{% endblock %}

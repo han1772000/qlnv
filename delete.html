@@ -1,0 +1,12 @@
+{% extends 'base.html' %} 
+{% block title %} 
+  Delete Page 
+{% endblock %} 
+{% block content %}
+
+<h1 class="nav-link">Are you sure to delete nhanvien?</h1>
+<form method="post">
+    <a class="nav-link"><button type="submit" class="btn btn-outline btn-danger">Delete</button></a>
+    <a class="nav-link" href="{{ url_for('nhanvien_page') }}"><button type="button" class="btn btn-success">Back to list</button></a>
+</form>
+{% endblock %}

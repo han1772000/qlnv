@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}
+  Create Nhanvien
+{% endblock  %}
+
+{% block content %}
+
+<form action = "{{ request.path }}" method = "post">
+  <h1>This is create new staff</h1>
+  <div
+        class="col-md3">
+    <label for = "name">name</label><br>
+    <input type = "text" name = "name" placeholder = "name" /><br>
+
+    <label for = "numberphone">numberphone</label><br>
+    <input type = "text" name = "numberphone" placeholder = "numberphone" /><br>
+    
+    <label for = "datejoin">datejoin</label><br>
+    <input type = "text" name = "datejoin" placeholder = "datejoin" /><br>
+
+    <label for = "description">description</label><br>
+    <input type = "text" name = "description" placeholder = "description" /><br>
+    
+    <button type = "submit" class="btn btn-success" value = "submit">Create</button>
+</form>
+  </div>
+
+
+{% endblock %}

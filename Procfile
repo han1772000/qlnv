@@ -1,0 +1,1 @@
+web: gunicorn nhanvien:app --log-file -
